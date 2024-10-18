@@ -14,7 +14,6 @@ use Elgentos\HyvaCROPurchasingConfidence\ViewModel\ReturnPercentageViewModel;
 
 $product          = $block->getProduct();
 $returnPercentage = $product->getData('return_percentage');
-$returnPercentage = 1;
 $returnPercentageViewModel  = $viewModels->require(ReturnPercentageViewModel::class);
 ?>
 <?php if($returnPercentage && $returnPercentage <= $returnPercentageViewModel->getReturnPercentageThreshold()): ?>
@@ -24,8 +23,8 @@ $returnPercentageViewModel  = $viewModels->require(ReturnPercentageViewModel::cl
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
         <div>
-            <p class="text-lg font-medium text-gray-900">Customers usually keep this item</p>
-            <p class="text-sm text-gray-600">This product has fewer returns than average compared to similar products.</p>
+            <p class="text-lg font-medium text-gray-900"><?= __('Customers usually keep this item'); ?></p>
+            <p class="text-sm text-gray-600"><?= __('This product has fewer returns than average compared to similar products.'); ?></p>
         </div>
     </div>
 <div>
