@@ -1,0 +1,18 @@
+{
+  "name": "elgentos/magento2-hyva-cro-purchasing-confidence",
+  "description": "Magento 2 Hyva CRO extension for increasing the purchasing confidence",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-catalog": "*"
+  },
+  "type": "magento2-module",
+  "license": "OSL-3.0",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Elgentos\\HyvaCROPurchasingConfidence\\": ""
+    }
+  }
+}

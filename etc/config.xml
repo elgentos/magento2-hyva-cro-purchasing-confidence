@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <hyva_cro>
+            <purchasing_confidence>
+                <enabled>1</enabled>
+                <sales_threshold>50</sales_threshold>
+                <return_percentage_threshold>30</return_percentage_threshold>
+            </purchasing_confidence>
+        </hyva_cro>
+    </default>
+</config>

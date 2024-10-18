@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Copyright Elgentos BV. All rights reserved.
+ * https://www.elgentos.nl/
+ */
+
+use Hyva\Theme\Model\ViewModelRegistry;
+use Magento\Framework\View\Element\Template;
+use Elgentos\HyvaCROPurchasingConfidence\ViewModel\ReturnPercentageViewModel;
+
+/** @var Template $block */
+/** @var ViewModelRegistry $viewModels */
+
+$product          = $block->getProduct();
+$returnPercentage = $product->getData('return_percentage');
+$returnPercentage = 1;
+$returnPercentageViewModel  = $viewModels->require(ReturnPercentageViewModel::class);
+?>
+<?php if($returnPercentage && $returnPercentage <= $returnPercentageViewModel->getReturnPercentageThreshold()): ?>
+</div>
+    <div class="border bg-green-100 border-green-500 rounded-lg p-4 bg-green-50 mt-4 flex items-start">
+        <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        <div>
+            <p class="text-lg font-medium text-gray-900">Customers usually keep this item</p>
+            <p class="text-sm text-gray-600">This product has fewer returns than average compared to similar products.</p>
+        </div>
+    </div>
+<div>
+<?php endif; ?>

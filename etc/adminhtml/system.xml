@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="elgentos" translate="label" sortOrder="10">
+            <label>Elgentos</label>
+        </tab>
+        <section id="hyva_cro" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Hyva CRO</label>
+            <tab>elgentos</tab>
+            <resource>Elgentos_HyvaCROPurchasingConfidence::config_hyva</resource>
+            <group id="purchasing_confidence" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Purchasing Confidence</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sales_threshold" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sales threshold</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <comment>We need at least this many sales of a product for the return percentage to be calculated.</comment>
+                </field>
+                <field id="average_return_percentage" translate="label" type="label" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Average Return Percentage</label>
+                    <frontend_model>Elgentos\HyvaCROPurchasingConfidence\Block\Adminhtml\AverageReturnPercentage</frontend_model>
+                    <comment>This is recalculated monthly.</comment>
+                </field>
+                <field id="return_percentage_threshold" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Return percentage threshold</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <comment>If the return percentage is below this number, the "Customers usually keep this item" block will appear on the PDP.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

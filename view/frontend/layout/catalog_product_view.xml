@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.additional.actions">
+            <block class="Magento\Catalog\Block\Product\View" name="confidence" template="Elgentos_HyvaCROPurchasingConfidence::product/view/confidence.phtml" />
+        </referenceContainer>
+    </body>
+</page>

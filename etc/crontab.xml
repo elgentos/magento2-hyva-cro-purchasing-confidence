@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/cron_groups.xsd">
+    <group id="default">
+        <job name="hyva_cro_purchasing_confidence_update_product_return_percentage" instance="Elgentos\HyvaCROPurchasingConfidence\Cron\UpdateProductReturnPercentage" method="execute">
+            <!-- Monthly -->
+            <schedule>0 0 1 * *</schedule>
+        </job>
+        <job name="hyva_cro_purchasing_confidence_update_average_return_percentage" instance="Elgentos\HyvaCROPurchasingConfidence\Cron\UpdateAverageReturnPercentage" method="execute">
+            <!-- Weekly -->
+            <schedule>0 0 * * 0</schedule>
+        </job>
+    </group>
+</config>
